@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Portfolio </title>
+<title>Portfolio</title>
 <link rel="icon" href="gnaicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -177,7 +177,7 @@
     display: grid;
     grid-template-columns: 1fr 520px;
     align-items: center;
-    padding: 8rem 0rem 4rem 4rem;
+    padding: 5rem 0rem 4rem 4rem;
     overflow: hidden;
     gap: 6rem;
   }
@@ -196,8 +196,8 @@
     padding-right: 3rem;
   }
   .hero-image img {
-    height: 85vh;
-    max-height: 700px;
+    height: 70vh;
+    max-height: 600px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 30px 80px rgba(124,109,250,0.25));
@@ -417,7 +417,7 @@
 
   /* ABOUT */
   #about {
-    padding: 8rem 4rem;
+    padding: 5rem 4rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6rem;
@@ -555,7 +555,7 @@
 
   /* PROJECTS */
   #projects {
-    padding: 8rem 4rem;
+    padding: 5rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -752,7 +752,7 @@
 
   /* CONTACT */
   #contact {
-    padding: 8rem 4rem;
+    padding: 5rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -888,7 +888,7 @@
   /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
-    padding: 2rem 4rem;
+    padding: 1rem 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1276,16 +1276,565 @@
     nav { padding: 1.2rem 2.5rem; }
     #hero { padding: 8rem 2.5rem 4rem; grid-template-columns: 1fr; text-align: center; }
     .hero-content { max-width: 100%; order: 2; }
-    .hero-image { order: 1; min-height: 400px; justify-content: center; height: auto; margin-bottom: 1rem; }
-    .hero-image img { height: 380px; }
+    .hero-image { order: 1; min-height: 300px; justify-content: center; height: auto; margin-bottom: 1rem; }
+    .hero-image img { height: 300px; }
     .hero-image::before { width: 300px; height: 300px; right: auto; left: 50%; transform: translateX(-50%); }
     footer { padding: 2rem 2.5rem; }
   }
     .hero-image::before { width: 300px; height: 300px; }
-  }
+  
   @media (max-width: 768px) {
     .hero-image img { max-width: 280px; }
     .hero-image::before { width: 250px; height: 250px; }
+  }
+
+
+  /* === MOBILE CENTERING FIX - Equal left/right padding === */
+  @media (max-width: 768px) {
+    html, body {
+      width: 100% !important;
+      max-width: 100vw !important;
+      overflow-x: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    /* Force equal padding on all sections */
+    #hero, #about, #projects, #contact, nav {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+      box-sizing: border-box !important;
+      left: 0 !important;
+      right: 0 !important;
+    }
+    
+    nav {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    
+    /* Center hero image and remove right push */
+    .hero-image {
+      padding: 0 !important;
+      margin: 0 auto !important;
+      width: 100% !important;
+      justify-content: center !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    
+    .hero-image img {
+      transform: none !important;
+      max-width: 85% !important;
+      width: auto !important;
+      height: auto !important;
+      margin: 0 auto !important;
+      display: block !important;
+      padding: 0 !important;
+    }
+    
+    .hero-image::before {
+      left: 50% !important;
+      right: auto !important;
+      transform: translateX(-50%) !important;
+    }
+    
+    /* Center all text content */
+    .hero-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 auto !important;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    
+    .hero-name, .hero-tag, .hero-desc {
+      width: 100% !important;
+      max-width: 100% !important;
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+      box-sizing: border-box !important;
+    }
+    
+    .hero-desc {
+      border-left: none !important;
+      border-top: 2px solid var(--accent2) !important;
+      padding-top: 1rem !important;
+      margin: 1.5rem auto !important;
+    }
+    
+    .hero-btns {
+      width: 100% !important;
+      padding: 0 0.5rem !important;
+      justify-content: center !important;
+      align-items: center !important;
+    }
+    
+    .btn-primary, .btn-secondary {
+      max-width: 100% !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* About section centering */
+    #about {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    
+    .about-title, .about-text, .about-label {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      box-sizing: border-box !important;
+      overflow-wrap: break-word !important;
+      word-wrap: break-word !important;
+    }
+    
+    .about-label {
+      justify-content: center !important;
+    }
+    
+    .skills-grid, .about-box, .stat-row {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* Projects section */
+    .section-header, .section-title, .section-label {
+      width: 100% !important;
+      text-align: center !important;
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+    
+    .section-label {
+      justify-content: center !important;
+    }
+    
+    /* Prevent any overflow */
+    * {
+      max-width: 100vw !important;
+    }
+    
+    img, video {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+  }
+
+
+  /* === MOBILE FIXES - Center everything and reduce font sizes === */
+  @media (max-width: 768px) {
+    /* Ensure no horizontal overflow */
+    html, body {
+      width: 100% !important;
+      max-width: 100vw !important;
+      overflow-x: hidden !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    /* Center all sections with equal padding */
+    #hero, #about, #projects, #contact {
+      width: 100% !important;
+      max-width: 100vw !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      margin: 0 auto !important;
+      box-sizing: border-box !important;
+      overflow-x: hidden !important;
+    }
+    
+    nav {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    
+    /* HERO SECTION - Center picture */
+    #hero {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      padding-top: 5rem !important;
+      padding-bottom: 2rem !important;
+      min-height: auto !important;
+    }
+    
+    .hero-image {
+      order: 1 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 auto 1.5rem !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      min-height: auto !important;
+    }
+    
+    .hero-image img {
+      transform: none !important;
+      max-width: 75% !important;
+      width: auto !important;
+      height: auto !important;
+      max-height: 320px !important;
+      margin: 0 auto !important;
+      display: block !important;
+    }
+    
+    .hero-image::before {
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: 250px !important;
+      height: 250px !important;
+    }
+    
+    .hero-content {
+      order: 2 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      text-align: center !important;
+    }
+    
+    /* REDUCE FONT SIZE for Artist.Designer.Creator */
+    .hero-name {
+      font-size: clamp(2.2rem, 10vw, 3rem) !important;
+      line-height: 1.1 !important;
+      text-align: center !important;
+      width: 100% !important;
+      padding: 0 0.5rem !important;
+      margin: 0 auto 0.5rem !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+    }
+    
+    .hero-tag {
+      justify-content: center !important;
+      text-align: center !important;
+      width: 100% !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    .hero-tag::before {
+      display: none !important;
+    }
+    
+    .hero-desc {
+      font-size: 0.85rem !important;
+      text-align: center !important;
+      max-width: 100% !important;
+      padding: 1rem 0.5rem 0 !important;
+      margin: 1rem auto !important;
+      border-left: none !important;
+      border-top: 2px solid var(--accent2) !important;
+    }
+    
+    .hero-btns {
+      width: 100% !important;
+      max-width: 320px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.75rem !important;
+    }
+    
+    .btn-primary, .btn-secondary {
+      width: 100% !important;
+      max-width: 100% !important;
+      justify-content: center !important;
+      padding: 0.85rem 1rem !important;
+      font-size: 0.8rem !important;
+    }
+    
+    /* ABOUT SECTION - Reduce font size */
+    .about-label {
+      justify-content: center !important;
+      text-align: center !important;
+    }
+    
+    /* REDUCE FONT SIZE for Multidisciplinary Creative Mind */
+    .about-title {
+      font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+      line-height: 1.2 !important;
+      text-align: center !important;
+      padding: 0 0.5rem !important;
+      margin-bottom: 1rem !important;
+      word-break: break-word !important;
+    }
+    
+    .about-text {
+      font-size: 0.82rem !important;
+      line-height: 1.7 !important;
+      text-align: center !important;
+      padding: 0 0.5rem !important;
+      max-width: 100% !important;
+    }
+    
+    /* Make skills grid 2 columns like projects */
+    .skills-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 0.75rem !important;
+      width: 100% !important;
+      padding: 0 0.25rem !important;
+    }
+    
+    .skill-card {
+      padding: 1rem !important;
+    }
+    
+    .skill-card-name {
+      font-size: 0.85rem !important;
+    }
+    
+    .skill-card-tools {
+      font-size: 0.68rem !important;
+    }
+    
+    .about-box {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 1.5rem 1rem !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+    
+    .stat-row {
+      gap: 1rem !important;
+    }
+    
+    .stat-num {
+      font-size: 2rem !important;
+    }
+    
+    /* Projects section - ensure same padding */
+    .section-header {
+      padding: 0 0.5rem !important;
+    }
+    
+    .project-card, .small-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+    }
+    
+    /* Ensure everything fits */
+    * {
+      max-width: 100vw !important;
+      box-sizing: border-box !important;
+    }
+    
+    img, video {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+  }
+  
+  /* Extra small screens */
+  @media (max-width: 380px) {
+    .hero-name {
+      font-size: clamp(1.9rem, 11vw, 2.6rem) !important;
+    }
+    .about-title {
+      font-size: clamp(1.4rem, 8vw, 1.9rem) !important;
+    }
+    .skills-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+
+  /* === FINAL TWEAKS - Smaller Multidisciplinary font + UI/UX next to 2D ART === */
+  @media (max-width: 768px) {
+    /* Make Multidisciplinary Creative Mind smaller to fit */
+    .about-title {
+      font-size: clamp(1.35rem, 6vw, 1.9rem) !important;
+      line-height: 1.15 !important;
+      letter-spacing: -0.01em !important;
+    }
+    
+    /* Make filter buttons smaller so UI/UX fits on same line */
+    .filter-tabs {
+      gap: 0.35rem !important;
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+    }
+    
+    .filter-btn {
+      font-size: 0.65rem !important;
+      padding: 0.4rem 0.75rem !important;
+      letter-spacing: 0.08em !important;
+      white-space: nowrap !important;
+    }
+    
+    /* Ensure section header doesn't push buttons */
+    .section-header {
+      gap: 1rem !important;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .about-title {
+      font-size: clamp(1.25rem, 6.5vw, 1.7rem) !important;
+    }
+    .filter-btn {
+      font-size: 0.6rem !important;
+      padding: 0.35rem 0.65rem !important;
+    }
+  }
+
+
+  /* === PICTURE SIZE AND SPACING FIX === */
+  @media (max-width: 768px) {
+    /* Make picture slightly smaller */
+    .hero-image {
+      margin-top: -0.5rem !important;
+      margin-bottom: -5rem !important;
+      padding: 0 !important;
+    }
+    
+    .hero-image img {
+      max-width: 68% !important;
+      max-height: 250px !important;
+      width: auto !important;
+    }
+    
+    .hero-image::before {
+      width: 220px !important;
+      height: 220px !important;
+    }
+    
+    /* Reduce space between picture and name */
+    .hero-content {
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+    
+    .hero-tag {
+      margin-bottom: 0.75rem !important;
+      margin-top: 0 !important;
+    }
+  }
+
+
+  /* === ADD 1REM TOP SPACE TO 02 ABOUT ME (MOBILE) === */
+  @media (max-width: 768px) {
+    #about {
+      padding-top: 3rem !important; /* Increased from 5rem to add 1rem */
+    }
+    
+    .about-label {
+      margin-top: 1rem !important;
+      padding-top: 0 !important;
+    }
+
+    #projects {
+      padding-top: 4rem !important; /* Increased from 6rem to add 1rem */
+    }
+
+    #contact {
+      padding-top: 4rem !important; /* Increased from 6rem to add 1rem */
+    }
+  }
+
+
+  /* === CENTER PROJECTS & CONTACT HEADERS LIKE ABOUT (MOBILE) === */
+  @media (max-width: 768px) {
+    /* Projects section - 03 SELECTED WORK */
+    .section-header {
+      text-align: center !important;
+      justify-content: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
+    
+    .section-label {
+      justify-content: center !important;
+      text-align: center !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      width: 100% !important;
+      margin: 0 auto 0.5rem !important;
+    }
+    
+    .section-label::before {
+      content: '03' !important;
+      color: var(--muted) !important;
+      font-size: 0.65rem !important;
+    }
+    
+    .section-title {
+      text-align: center !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 0.5rem !important;
+    }
+    
+    /* Contact section - 04 GET IN TOUCH */
+    .contact-label {
+      justify-content: center !important;
+      text-align: center !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      width: 100% !important;
+      margin: 0 auto 0.5rem !important;
+      font-family: var(--font-mono) !important;
+      font-size: 0.75rem !important;
+      color: var(--accent) !important;
+      letter-spacing: 0.2em !important;
+      text-transform: uppercase !important;
+    }
+    
+    .contact-label::before {
+      content: '04' !important;
+      color: var(--muted) !important;
+      font-size: 0.65rem !important;
+    }
+    
+    .contact-title {
+      text-align: center !important;
+      width: 100% !important;
+      margin: 0 auto 1rem !important;
+      padding: 0 0.5rem !important;
+      font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+      font-weight: 800 !important;
+      line-height: 1.1 !important;
+    }
+    
+    .contact-title span {
+      color: var(--accent) !important;
+    }
+    
+    .contact-text {
+      text-align: center !important;
+      padding: 0 0.5rem !important;
+    }
   }
 
 </style>
@@ -1670,9 +2219,9 @@
 <footer>
   <div class="footer-copy">© 2026 <span>Artist & Game Designer</span> — All rights reserved</div>
   <div class="footer-links">
-    <a href="#hero">Top</a>
+    <a href="#hero">Home</a>
     <a href="#about">About</a>
-    <a href="#projects">Work</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
 </footer>
